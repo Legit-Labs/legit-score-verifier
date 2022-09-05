@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/legit-labs/legit-score v0.0.0-20220901075547-042193fffa49
-	github.com/legit-labs/legit-verify-attestation v0.0.0-20220905121044-afc43d81f95a
+	github.com/legit-labs/legit-verify-attestation v0.0.0-20220905123851-b94263ef355f
 )
 
 require (
