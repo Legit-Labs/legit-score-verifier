@@ -933,6 +933,8 @@ github.com/ldez/gomoddirectives v0.2.2/go.mod h1:cpgBogWITnCfRq2qGoDkKMEVSaarhdB
 github.com/ldez/tagliatelle v0.2.0/go.mod h1:8s6WJQwEYHbKZDsp/LjArytKOG8qaMrKQQ3mFukHs88=
 github.com/legit-labs/legit-score v0.0.0-20220901075547-042193fffa49 h1:bZYR1mBS6B7HYHmnkFbiNUjFdRx5VGDqtNDNlZu7Vdk=
 github.com/legit-labs/legit-score v0.0.0-20220901075547-042193fffa49/go.mod h1:OxlUdT4ETdYNbfJksGK3ImehaCc90nmFilXBNt7C8m4=
+github.com/legit-labs/legit-score v0.0.0-20220905140651-502c0c2917a5 h1:cJi4OMPaoSlIp9I8aC5+Pz8bBCQ55FomPF4hsJG1hhY=
+github.com/legit-labs/legit-score v0.0.0-20220905140651-502c0c2917a5/go.mod h1:OxlUdT4ETdYNbfJksGK3ImehaCc90nmFilXBNt7C8m4=
 github.com/legit-labs/legit-verify-attestation v0.0.0-20220905103212-ce6df17af289 h1:Hwphbsm9JyMLe3bkAIjYBKyCnYh+j7OiAHP6WQUl+/w=
 github.com/legit-labs/legit-verify-attestation v0.0.0-20220905103212-ce6df17af289/go.mod h1:7OVexnsX6TNbWMNKSzHMrhQQwiUBLArgl/xtd+RbtHA=
 github.com/legit-labs/legit-verify-attestation v0.0.0-20220905115603-85ca1f0f71b8 h1:JarCigIOlhblsXc8o270ILo2ajv+nEoASREgVt9wGwk=

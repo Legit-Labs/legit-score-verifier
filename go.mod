@@ -3,7 +3,7 @@ module github.com/legit-labs/legit-score-verifier
 go 1.18
 
 require (
-	github.com/legit-labs/legit-score v0.0.0-20220901075547-042193fffa49
+	github.com/legit-labs/legit-score v0.0.0-20220905140651-502c0c2917a5
 	github.com/legit-labs/legit-verify-attestation v0.0.0-20220905123851-b94263ef355f
 )
 

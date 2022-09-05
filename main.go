@@ -44,13 +44,13 @@ func main() {
 		log.Panicf("attestation verification failed: %v", err)
 	}
 
-	var predicate legitscore.LegitScorePredicate
-	err = json.Unmarshal(payload, &predicate)
+	var statement legitscore.LegitScoreStatement
+	err = json.Unmarshal(payload, &statement)
 	if err != nil {
 		log.Panicf("failed to unmarshal predicate: %v", err)
 	}
 
-	if err = predicate.Verify(repo, minScore); err != nil {
+	if err = statement.Predicate.Verify(repo, minScore); err != nil {
 		log.Panicf("score verification failed: %v", err)
 	}
 
