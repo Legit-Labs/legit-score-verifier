@@ -4,18 +4,12 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"os"
 
 	legitscore "github.com/legit-labs/legit-score"
 	verifyattestation "github.com/legit-labs/legit-verify-attestation/verify-attestation"
 )
 
-func Verify(attestationPath string, keyPath string, digest string, minScore float64, repo string) error {
-	attestation, err := os.ReadFile(attestationPath)
-	if err != nil {
-		return fmt.Errorf("failed to open attestation at %v: %v", attestationPath, err)
-	}
-
+func Verify(attestation []byte, keyPath string, digest string, minScore float64, repo string) error {
 	payload, err := verifyattestation.VerifiedPayload(context.Background(), keyPath, attestation)
 	if err != nil {
 		return fmt.Errorf("attestation verification failed: %v", err)

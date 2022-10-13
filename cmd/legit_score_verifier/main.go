@@ -2,17 +2,20 @@ package main
 
 import (
 	"flag"
+	"io/ioutil"
 	"log"
+	"os"
 
 	legit_score_verifier "github.com/legit-labs/legit-score-verifier/legit-score-verifier"
 )
 
 var (
-	keyPath         string
-	attestationPath string
-	repo            string
-	digest          string
-	minScore        float64
+	keyPath          string
+	attestationPath  string
+	attestationStdin bool
+	repo             string
+	digest           string
+	minScore         float64
 )
 
 func main() {
@@ -26,13 +29,26 @@ func main() {
 
 	if keyPath == "" {
 		log.Panicf("please provide a public key path")
-	} else if attestationPath == "" {
-		log.Panicf("please provide an attestation path")
+	} else if !attestationStdin && attestationPath == "" {
+		log.Panicf("please provide an attestation path (or set -attestation-stdin to read it from stdin)")
 	} else if repo == "" {
 		log.Panicf("please provide a repository")
 	}
 
-	err := legit_score_verifier.Verify(attestationPath, keyPath, digest, minScore, repo)
+	var attestation []byte
+	var err error
+	if attestationStdin {
+		if attestation, err = ioutil.ReadAll(os.Stdin); err != nil {
+			log.Panicf("failed to read payload from stdin: %v", err)
+		}
+	} else {
+		attestation, err = os.ReadFile(attestationPath)
+		if err != nil {
+			log.Panicf("failed to open payload at %v: %v", attestationPath, err)
+		}
+	}
+
+	err := legit_score_verifier.Verify(attestation, keyPath, digest, minScore, repo)
 	if err != nil {
 		log.Panicf("Legit score verification failed: %v", err)
 	}
