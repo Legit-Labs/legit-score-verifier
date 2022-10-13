@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"flag"
 	"io/ioutil"
 	"log"
@@ -48,7 +49,7 @@ func main() {
 		}
 	}
 
-	err := legit_score_verifier.Verify(attestation, keyPath, digest, minScore, repo)
+	err = legit_score_verifier.Verify(context.Background(), attestation, keyPath, digest, minScore, repo)
 	if err != nil {
 		log.Panicf("Legit score verification failed: %v", err)
 	}
