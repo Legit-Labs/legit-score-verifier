@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 
-	legit_score_verifier "github.com/legit-labs/legit-score-verifier/legit-score-verifier"
+	"github.com/legit-labs/legit-score-verifier/pkg/legit_score_verifier"
 )
 
 var (
